@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :restrict_to_signed_in, only: [:new, :create]
+  before_action :restrict_to_signed_in, only: [:new, :create, :index]
 
   def new
     @event = Event.new

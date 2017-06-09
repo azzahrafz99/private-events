@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :restrict_to_signed_in, only: [:new, :create]
+	before_action :restrict_to_signed_in, only: [:new, :create, :index]
 
 	def index
 		@users = User.all

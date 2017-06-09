@@ -35,7 +35,7 @@ module SessionsHelper
     def restrict_to_signed_in
         unless signed_in?
             session[:return_to] = request.url if request.get?
-            redirect_to signin_path, notice: "Please sign in"
+            redirect_to sign_in_path, notice: "Please sign in"
         end
         # current_user
     end

@@ -1,0 +1,10 @@
+<p><b><%= @user.username %></b></p>
+<% if signed_in? %>
+  <%= link_to 'Logout', logout_path %>
+<% end %>
+<%= link_to "Go to Events List", events_path %><br>
+<% @user_events.each do |user_event| %>
+  <h3><%= user_event.title %></h3>
+  <p><%= user_event.description %></p>
+  <p><%= user_event.date %></p><br>
+<% end %>

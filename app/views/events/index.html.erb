@@ -1,0 +1,22 @@
+<h1>Event Page</h1>
+<%= link_to "Go to Profile", user_path(current_user) %>
+<%= link_to "Create a New Event", new_event_path, class: "new_event" %>
+
+<ul id="events">
+  <h2>Past Events</h2>
+  <% @past_events.each do |event| %>
+    <table>
+      <tr>
+        <td><%= link_to event.title, event_path(event) %></td>
+      </tr>
+    </table>
+  <% end %>
+  <h2>Upcoming Events</h2>
+  <% @upcoming_events.each do |event| %>
+    <table>
+      <tr>
+        <td><%= link_to event.title, event_path(event) %></td>
+      </tr>
+    </table>
+  <% end %>
+</ul>

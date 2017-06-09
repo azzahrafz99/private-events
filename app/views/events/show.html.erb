@@ -1,0 +1,11 @@
+<% if signed_in? %>
+<h3><%= @event.title %></h3>
+<p> Deskripsi : <%= @event.description %></p>
+<p> Tanggal : <%= @event.date %></p><br />
+
+<%= link_to "Edit", edit_event_path(@event) %>
+<%= link_to "Delete", event_path(@event), method: :delete, data:
+{confirm: "Really delete the event?"} %><br /><br>
+<%= link_to "<< Back to Events List", events_path %>
+
+<% end %>

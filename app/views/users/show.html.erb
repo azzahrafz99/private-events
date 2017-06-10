@@ -1,4 +1,6 @@
 <p><b><%= @user.username %></b></p>
+<%= render 'shared/stats' %>
+<%= render 'follow_form' if signed_in? %>
 <% if signed_in? %>
   <%= link_to 'Logout', logout_path %>
 <% end %>

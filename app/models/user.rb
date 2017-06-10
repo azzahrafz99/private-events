@@ -37,6 +37,10 @@ class User < ApplicationRecord
     following.delete(other_user)
   end
 
+  def follow!(other_user)
+    self.relationships.create(follower_id = other_user.id)
+  end
+
   def following?(other_user)
     following.include?(other_user)
   end

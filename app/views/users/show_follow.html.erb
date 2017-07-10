@@ -1,0 +1,20 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1><%= @user.username %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>events:</b> <%= @user.events.count %></span>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <% @users.each do |user| %>
+          <%= user.username %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
